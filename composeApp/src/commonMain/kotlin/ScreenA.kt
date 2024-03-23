@@ -23,7 +23,7 @@ class ScreenA : Screen {
             Text("Screen A")
             Button(
                 onClick = {
-                    navigator.push(ScreenB())
+                    navigator.push(ScreenB("some uuid"))
                 }
             ) {
                 Text("Navigate to screen B")

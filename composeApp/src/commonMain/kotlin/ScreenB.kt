@@ -8,7 +8,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
 
-class ScreenB : Screen {
+data class ScreenB(
+    val textARg: String
+) : Screen {
     @Composable
     override fun Content() {
         Column(
@@ -17,6 +19,7 @@ class ScreenB : Screen {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("Screen B")
+            Text(textARg)
         }
     }
 }
