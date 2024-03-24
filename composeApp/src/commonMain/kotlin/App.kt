@@ -15,7 +15,13 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Preview
 fun App() {
     MaterialTheme {
-        Navigator(ScreenA()) { navigator ->
+        Navigator(
+            screen = ScreenA(),
+            onBackPressed = { currentScreen ->
+                println("Back Pressed on screen ${currentScreen.key}")
+                true // if false won't pop current screen
+            }
+        ) { navigator ->
             Scaffold(
                 topBar = { TopAppBar { Text("Voyager") } }
             ) { innerPadding ->

@@ -6,6 +6,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import cafe.adriel.voyager.core.lifecycle.LifecycleEffect
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -16,6 +17,15 @@ data class ScreenB(
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
+
+        LifecycleEffect(
+            onStarted = {
+                println("started")
+            },
+            onDisposed = {
+                println("I'm been disposed :(")
+            }
+        )
 
         Column(
             modifier = Modifier.fillMaxSize(),
