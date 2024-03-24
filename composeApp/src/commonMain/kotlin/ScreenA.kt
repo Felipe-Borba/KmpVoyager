@@ -6,8 +6,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 
@@ -18,7 +18,8 @@ class ScreenA : Screen {
         // To allow multiple instances of screenViewModel
         // val screenModel = rememberScreenModel(tag = "CUSTOM_TAG") { HomeScreenModel() }
         // otherwise just
-        val screenModel = rememberScreenModel { ScreenViewModel() }
+//        val screenModel = rememberScreenModel { ScreenViewModel() }
+        val screenModel = getScreenModel<ScreenViewModel>()
 
         Column(
             modifier = Modifier.fillMaxSize(),

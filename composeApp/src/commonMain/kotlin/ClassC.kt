@@ -1,0 +1,2 @@
+class ClassC : SampleInterface {
+}
