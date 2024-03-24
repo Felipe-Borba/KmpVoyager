@@ -43,6 +43,7 @@ kotlin {
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.tabNavigator)
             implementation(libs.voyager.transitions)
+            implementation(libs.voyager.screenModel)
         }
     }
 }
