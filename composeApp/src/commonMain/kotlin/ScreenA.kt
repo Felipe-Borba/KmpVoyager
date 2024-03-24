@@ -29,7 +29,7 @@ class ScreenA : Screen {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Screen A")
+            Text("Screen A ${screenModel.value}")
             Button(
                 onClick = {
                     screenModel.doSomethingOnScreenA() {

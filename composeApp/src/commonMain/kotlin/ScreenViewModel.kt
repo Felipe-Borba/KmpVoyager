@@ -1,7 +1,7 @@
 import cafe.adriel.voyager.core.model.ScreenModel
 
 class ScreenViewModel : ScreenModel {
-    private var value = 0;
+    var value = 0;
 
     fun doSomethingOnScreenA(callback: () -> Unit) {
         value++
