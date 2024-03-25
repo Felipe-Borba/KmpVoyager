@@ -41,7 +41,7 @@ data class ScreenB(
 
             Button(
                 onClick = {
-                    screenModel.doSomethingOnScreenB()
+                    screenModel.onEvent(ScreenEvent.Increase)
                     navigator.pop()
                 }
             ) {
