@@ -34,7 +34,10 @@ class ScreenA : Screen {
         val screenModel = navigator.getNavigatorScreenModel<ScreenViewModel>()
         val state by screenModel.state.collectAsState()
 
-        GlobalScope.launch {
+        // Returns a scope that's cancelled when F is removed from composition
+        val coroutineScope = rememberCoroutineScope()
+//        GlobalScope.launch {
+        coroutineScope.launch {
             screenModel.uiEvent.collect { event ->
                 when (event) {
                     UiEvent.GotoNextScreen -> {
