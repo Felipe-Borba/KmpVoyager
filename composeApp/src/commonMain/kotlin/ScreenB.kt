@@ -12,15 +12,19 @@ import cafe.adriel.voyager.koin.getNavigatorScreenModel
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 data class ScreenB(
     val textARg: String
 ) : Screen {
+    @OptIn(DelicateCoroutinesApi::class)
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.currentOrThrow
 //        val screenModel = rememberScreenModel { ScreenViewModel() }
-        val screenModel = navigator.getNavigatorScreenModel<ScreenViewModel>()
+//        val screenModel = navigator.getNavigatorScreenModel<ScreenViewModel>()
 
         LifecycleEffect(
             onStarted = {
@@ -41,7 +45,7 @@ data class ScreenB(
 
             Button(
                 onClick = {
-                    screenModel.onEvent(ScreenEvent.Increase)
+//                    screenModel.onEvent(ScreenEvent.Increase)
                     navigator.pop()
                 }
             ) {
